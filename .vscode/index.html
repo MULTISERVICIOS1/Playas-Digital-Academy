@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Playas Digital Academy</title>
-    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init("u9q2GPr4a7H3kySDb");
+        })();
+    </script>
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
+    <!-- NAV -->
     <nav class="navbar">
         <div class="logo">Playas Digital Academy</div>
-
         <ul class="nav-links">
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#cursos">Cursos</a></li>
@@ -21,18 +29,26 @@
         </ul>
     </nav>
 
-    <!-- HERO PRINCIPAL -->
+    <!-- HERO -->
     <header class="hero" id="inicio">
-        <h1>Formación Profesional desde Playas - Ecuador</h1>
-        <p>Turismo • Compras Públicas • Sector Público • Tecnología</p>
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="assets/video/fondo-tech.mp4" type="video/mp4">
+        </video>
 
-        <div class="hero-buttons">
-            <a href="#cursos" class="btn">Ver Cursos</a>
-            <a href="#app" class="btn-secondary">Descargar App</a>
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <h1>Formación Profesional desde Playas - Ecuador</h1>
+            <p>Turismo • Compras Públicas • Sector Público • Tecnología</p>
+
+            <div class="hero-buttons">
+                <a href="#cursos" class="btn">Ver Cursos</a>
+                <a href="#app" class="btn-secondary">Descargar App</a>
+            </div>
         </div>
     </header>
 
-    <!-- SECCIÓN CURSOS -->
+    <!-- CURSOS -->
     <section id="cursos" class="cursos">
         <h2>Nuestros Cursos</h2>
 
@@ -49,26 +65,50 @@
             </div>
 
             <div class="curso-card">
-                <h3>Transformación Digital</h3>
-                <p>Capacitación en herramientas tecnológicas para negocios.</p>
+                <h3>Procesos Sector Público</h3>
+                <p>Administración, talento humano y gestión documental.</p>
+            </div>
+
+            <div class="curso-card">
+                <h3>Tecnología & Ciberseguridad</h3>
+                <p>Redes, hacking ético, ciberseguridad y desarrollo web.</p>
             </div>
 
         </div>
     </section>
 
-    <!-- SECCIÓN APP -->
+    <!-- APP -->
     <section id="app" class="app">
-        <h2>Descarga Nuestra App</h2>
-        <p>Disponible para Android. Cursos, talleres y certificaciones en un solo lugar.</p>
-        <a class="btn" href="#">Descargar APK</a>
+        <h2>Descargar App Android</h2>
+        <p>Versión móvil optimizada para aprendizaje.</p>
+
+        <a class="download-btn" href="assets/app/PlayasAcademy.apk" download>📱 Descargar APK</a>
+
+        <div class="social-icons">
+            <a href="https://facebook.com" target="_blank" class="fb">Facebook</a>
+            <a href="https://instagram.com" target="_blank" class="ig">Instagram</a>
+            <a href="https://wa.me/593123456789" target="_blank" class="wa">WhatsApp</a>
+        </div>
     </section>
 
     <!-- CONTACTO -->
-    <footer id="contacto" class="contacto">
-        <h2>Contacto</h2>
-        <p>Playas - Ecuador</p>
-        <p>Email: info@playasdigitalacademy.com</p>
+    <section id="contacto" class="contacto">
+        <h2>Contáctanos</h2>
+
+        <form id="form-contacto">
+            <input type="text" name="nombre" placeholder="Nombre" required />
+            <input type="email" name="correo" placeholder="Correo" required />
+            <textarea name="mensaje" placeholder="Mensaje" required></textarea>
+            <button type="submit" class="btn">Enviar</button>
+        </form>
+
+        <p id="mensaje-estado"></p>
+    </section>
+
+    <footer>
+        © 2025 Playas Digital Academy - Innovación desde Playas
     </footer>
 
+    <script src="form.js"></script>
 </body>
 </html>
